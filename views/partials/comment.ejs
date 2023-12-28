@@ -1,0 +1,60 @@
+
+
+
+
+<div class="col-xs-12 comment-indent">
+
+ 
+
+
+ 
+
+
+  
+   
+  
+    
+
+  <% comment.comments.forEach(function(post){%>
+    <div>
+  <%if(post.comments.length >0){%>
+  <div id="one">
+    
+    <%- include ('../partials/skip.ejs',{comments:post,postId:sub._id,parentpost,smallId:post.random}) 
+    %> 
+   
+    
+    
+  
+    <div id="<%=post.random+5%>" style="display: none;">
+      <div class="panel-body" style="background: rgb(238, 247, 227);">
+      <a class='in btn btn-danger' id="<%=post.random1+1%>" data-id1="<%=post.random+1%>"  data-id="<%=post.random+5%>" >&times;</a>
+      <%- include ('../partials/comment.ejs',{comment:post,postId:post._id,}) 
+      %> 
+    </div>
+    </div>
+  </div> <%}
+  else{%>
+  <div class="one">
+    <%- include ('../partials/skip.ejs',{comments:post,postId:sub._id,parentpost,smallId:post.random}) 
+    %> 
+  </div>
+  <div id="two">
+    <%- include ('../partials/comment.ejs',{comment:post,postId:post._id}) 
+    %> 
+  </div>
+  <%}%>
+    </div>
+  
+     
+          
+          
+   
+          
+          
+        
+  
+        <% })%> 
+      </div>
+
+      

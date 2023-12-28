@@ -1,0 +1,40 @@
+<h2>Inventory Table</h2>
+    <table class="table">
+      <thead>
+        <tr>
+            <th>ID</th>
+          <th>Name</th>
+          <th>Quantity</th>
+          <th>Unit Price</th>
+          <th>Total Worth</th>
+          <th>Created By</th>
+          <th>Store</th>
+          <th>Date Created</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% posts.forEach(post => { %>
+          <tr>
+            <td><%= post._id %></td>
+            <td><%= post.name %></td>
+            <td><%= post.quantity %></td>
+            <td>Unit Price</td>
+            <td>Total Price</td>
+            <td><%=post.agent.name%></td>
+            <td>Store</td>
+            <td><%= post.date %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+
+    <p>REMEMBER TO SEGMENT THEM</p>
+
+    <form action="/grace/search-inventory" method="post" class="form-inline">
+        <div class="form-group mx-sm-3 mb-2">
+          <label for="productName" class="sr-only">Product Name:</label>
+          <input type="text" class="form-control" id="productName" name="productName" placeholder="Enter product name" required>
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Search</button>
+      </form>
+

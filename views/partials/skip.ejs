@@ -1,0 +1,60 @@
+
+<p><span class="container" style="word-break: break-all; color:black;"><%=comments.content%>
+  <a type="button" class="modalBtn"  data-id3="<%=comments._id%>"data-id="<%=comments.random1%>" data-id1="<%=comments.random1+1%>" data-id2='<%=postId%>' >
+    <small>Reply</small></a>
+    <% if(comments.comments.length > 0){%>
+
+      <a class='btn1 badge out' id="<%=comments.random+1%>" data-id1="<%=comments.random+1%>" data-id2="<%=comments.random1+1%>x"  data-id="<%=comments.random+5%>">Replies </a><span class="badge"><%=comments.comments.length%></span>
+
+        <%}%>
+        
+</span>
+  
+  <img style="color:black; background: blue;" src="/images/<%=comments.author.img%>" alt="<%=comments.author.name%>"  class="img-circle" width="50px" height="50px">
+    
+            
+        
+        
+
+  </p>
+
+  
+  
+  
+    
+    
+        
+        <div class="modal" style="display:none" id="<%=comments.random1%>" role="dialog" tabindex="-1">
+            <div class="modal-thing">
+              <span class="closeBtn" data-id="<%=comments.random1%>">&times;</span>
+            <p>Reply to <%=comments.content%></p>
+          <form name="form" id="<%=comments.random1+3%>" class='cantos form1' data-id0="<%=comments._id%>" data-id="<%=postId%>" data-id1="<%=comments._id%>" data-id2="<%=parentpost+1%>" data-id3="<%=comments.random1%>"data-id4="<%=comments.random1+3%>" data-id5="<%=comments.random+5%>"  data-id7="<%=smallId+5%>">
+                <div class="form-group">
+                  <textarea name="content" class="form-control ckdone3" id="reply-content" placeholder="reply"></textarea>
+                </div>
+          
+                <div class='text-right'>
+                  <button class="commenter" data-id="<%=comments._id%>" data-id1="<%=comments.author._id%>" type="submit" class="btn btn-primary">
+                    Reply</button>
+                </div>
+              </form>
+            
+          </div>
+         
+        </div>
+        <script src="/ckeditorbasic/ckeditor.js"></script>
+        <script>
+          //CKEDITOR.replace('content')
+          </script>    
+          
+
+         
+          
+          
+
+           
+            
+           
+        
+        
+        

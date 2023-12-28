@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyambogo Engineers Blog</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    
+   <!--<script src="ckeditor/ckeditor.js"></script>--> 
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!--Brand and Toggle get grouped for better mobile display-->
+        
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+            data-toggle="collapse"
+             data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                
+            </button>
+            <a class="navbar-brand" href="#">HYPERBOARD</a>
+        </div>
+
+    <% if(typeof user !='undefined') { %>
+        <% if(typeof name != "undefined"){ %>
+        <!--COLLECT NAV LINKS FORMS AND OTHER CONTENT FOR TOGLLING-->   
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">DashBoard<span class="sr-only">(current)</span></a></li>
+            <li><a href="posts.html">Posts</a></li>
+            <li><a href="/users/profile">Profile</a></li>
+        </ul>
+        <!--LOGOUT,LOGIN,-->
+        <ul class="nav navbar-nav navbar-right">
+        <!--WELCOME{{USER}} MUST BE ABLE TO TAKE YOU TO MAJOR ACCOUNT PROFILE-->
+            <li><a href="#">WELCOME <%=name %></a></li>
+            <li><a href="/users/logout">Logout</a></li>
+
+        </ul>
+    </div>
+    <%}%>
+
+
+   <% }%>
+    
+    
+    
+    </div>
+    </nav>
+
+    
+        <%-body%>
+
+        
+            <footer id="footer">
+                <p>Copyright HyperBoard, &copy; 2021</p>
+            </footer>
+        
+
+           
+    
+
+    <script src="/js/jquery.min.js"></script>
+        <!-- Include all compiled plugins(below), or include individual files as needed-->
+        <script type="text/javascript" src="/js/post.js"></script>
+        <script type="text/javascript" src="/js/main.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+    
+</body>
+</html>
